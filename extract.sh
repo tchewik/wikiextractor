@@ -10,17 +10,16 @@
 # - Remove disambiguation pages. Right now there is no use for them.
 
 INPUT=$1
-PROCESSES=$2
-TEMPLATES=$3
-OUTPUT=$4
+PROCESSES=2
+OUTPUT=extracted
 
 python WikiExtractor.py $INPUT \
        --json \
        --processes $PROCESSES \
-       --templates $TEMPLATES \
        --output $OUTPUT \
        --bytes 1M \
        --compress \
+       --filter_category categories.filter \
        --links \
        --sections \
        --lists \
